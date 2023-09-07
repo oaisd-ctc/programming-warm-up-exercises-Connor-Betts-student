@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace NoviceChallenges
 {
@@ -6,43 +7,76 @@ namespace NoviceChallenges
     {
         static void Main(string[] args)
         {
-            // Use the Main method to test your functions.
+
+            Console.WriteLine(Add(1279, 8809));
+            Console.WriteLine(IsEven(2));
+            Console.WriteLine(MaxOfThree(138, 20, 389));
+            Console.WriteLine(StringLength("Hello World"));
+            Console.WriteLine(IsPrime(5));
+            Console.WriteLine(ReverseString("Hello World"));
         }
 
         // 1. Return the sum of two numbers.
         public static int Add(int a, int b)
         {
-            // TODO: Implement this method.
-            return 0;
+            int Sum = a + b;
+
+            return Sum;
         }
 
         // 2. Given an integer, return true if it's even, else return false.
         public static bool IsEven(int number)
         {
-            // TODO: Implement this method.
-            return false;
+            if (number % 2 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         // 3. Return the largest of three numbers.
         public static int MaxOfThree(int a, int b, int c)
         {
-            // HINT: You might want to use Math.Max function.
-            // TODO: Implement this method.
-            return 0;
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    return a;
+                }
+                else
+                {
+                    return c;
+                }
+            }
+            else if (b > c)
+            {
+                return b;
+            }
+            else
+            {
+                return c;
+            }
+
+
         }
 
         // 4. Return the length of the given string.
         public static int StringLength(string s)
         {
-            // TODO: Implement this method.
-            return 0;
+            int wordLength = s.Length;
+            return s.Length;
         }
 
         // 5. Return true if the string starts with "Hello", otherwise return false.
+        // HINT: Use the string method "StartsWith".
         public static bool StartsHello(string s)
         {
-            // HINT: Use the string method "StartsWith".
-            // TODO: Implement this method.
+
+
             return false;
         }
 
@@ -50,7 +84,7 @@ namespace NoviceChallenges
         public static string ReverseString(string s)
         {
             char[] charArray = s.ToCharArray();
-            // TODO: Reverse the charArray.
+            Array.Reverse(charArray);
             return new string(charArray);
         }
 
@@ -58,20 +92,29 @@ namespace NoviceChallenges
         public static int Factorial(int n)
         {
             if (n == 0) return 1;
-            // TODO: Calculate the factorial.
+
             return 0;
         }
 
         // 8. Check if a number is a prime number.
         public static bool IsPrime(int number)
         {
-            if (number <= 1) return false;
-            for (int i = 2; i < number; i++)
+            int a = 0;
+            for (int i = 1; i <= number; i++)
             {
-                if (number % i == 0) return false;
+                if (number % i == 0)
+                {
+                    a++;
+                }
             }
-            // TODO: Return the correct boolean value.
-            return false;
+            if(a == 2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
         }
 
         // 9. Return the nth Fibonacci number.
